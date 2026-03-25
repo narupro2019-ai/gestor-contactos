@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>✏️ Editar Contacto</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label">Nombre completo</label>
+        <input type="text" name="nombre" value="{{ contact['nombre'] }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Teléfono</label>
+        <input type="tel" name="telefono" value="{{ contact['telefono'] }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" value="{{ contact['email'] }}" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success">Actualizar Contacto</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
